@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="4">
+
+    <TextView
+        android:id="@+id/labelnome"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="Nome:" />
+
+    <TextView
+        android:id="@+id/lvnome"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/labelidade"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="Idade:" />
+
+    <TextView
+        android:id="@+id/lvidade"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="100" />
+
+    <TextView
+        android:id="@+id/labelMortalidade"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Motalidade (%):" />
+    <TextView
+        android:id="@+id/lvmortalidade"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="2%" />
+</LinearLayout>
