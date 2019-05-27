@@ -8,11 +8,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class cadastro extends AppCompatActivity {
+public class Cadastro extends AppCompatActivity {
 
     private Button btn_add;
-    private EditText input_nome, input_idade, input_leucocito, input_glicemia, input_ast, input_ldh;
-    private CheckBox isLitiase;
+    private EditText inputNome, inputIdade, inputLeucocito, inputGlicemia, inputAST, inputLDH;
+    private CheckBox hasLitiase;
     private TextView scoreText, mortalidadeText, labelScore, labelMortalidade;
 
 
@@ -20,14 +20,14 @@ public class cadastro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        input_nome = findViewById(R.id.input_nome);
-        input_idade = findViewById(R.id.input_idade);
-        input_leucocito = findViewById(R.id.input_leucocito);
-        input_glicemia = findViewById(R.id.input_glicemia);
-        input_ast = findViewById(R.id.input_ast);
-        input_ldh = findViewById(R.id.input_ldh);
+        inputNome = findViewById(R.id.inputNome);
+        inputIdade = findViewById(R.id.inputIdade);
+        inputLeucocito = findViewById(R.id.inputLeucocito);
+        inputGlicemia = findViewById(R.id.inputGlicemia);
+        inputAST = findViewById(R.id.inputAST);
+        inputLDH = findViewById(R.id.inputLDH);
         btn_add = findViewById(R.id.btn_add);
-        isLitiase = findViewById(R.id.litiase);
+        hasLitiase = findViewById(R.id.litiase);
         scoreText = findViewById(R.id.scoreText);
         mortalidadeText = findViewById(R.id.mortalidadeText);
         labelMortalidade = findViewById(R.id.labelMortalidade);
@@ -36,7 +36,7 @@ public class cadastro extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isLitiase.isChecked()) {
+                if (hasLitiase.isChecked()) {
                     withLitiase();
                 } else {
                     withoutLitiase();
@@ -47,23 +47,23 @@ public class cadastro extends AppCompatActivity {
 
     public void withoutLitiase() {
         int score = 0;
-        if (Integer.parseInt(input_idade.getText().toString()) > 55) {
+        if (Integer.parseInt(inputIdade.getText().toString()) > 55) {
             score++;
         }
 
-        if (Integer.parseInt(input_leucocito.getText().toString()) > 16000) {
+        if (Integer.parseInt(inputLeucocito.getText().toString()) > 16000) {
             score++;
         }
 
-        if (Integer.parseInt(input_idade.getText().toString()) > 11) {
+        if (Integer.parseInt(inputIdade.getText().toString()) > 11) {
             score++;
         }
 
-        if (Integer.parseInt(input_ast.getText().toString()) > 250) {
+        if (Integer.parseInt(inputAST.getText().toString()) > 250) {
             score++;
         }
 
-        if (Integer.parseInt(input_ldh.getText().toString()) > 350) {
+        if (Integer.parseInt(inputLDH.getText().toString()) > 350) {
             score++;
         }
 
@@ -86,23 +86,23 @@ public class cadastro extends AppCompatActivity {
 
     public void withLitiase() {
         int score = 0;
-        if (Integer.parseInt(input_idade.getText().toString()) > 70) {
+        if (Integer.parseInt(inputIdade.getText().toString()) > 70) {
             score++;
         }
 
-        if (Integer.parseInt(input_leucocito.getText().toString()) > 18000) {
+        if (Integer.parseInt(inputLeucocito.getText().toString()) > 18000) {
             score++;
         }
 
-        if (Double.parseDouble(input_idade.getText().toString()) > 12.2) {
+        if (Double.parseDouble(inputIdade.getText().toString()) > 12.2) {
             score++;
         }
 
-        if (Integer.parseInt(input_ast.getText().toString()) > 250) {
+        if (Integer.parseInt(inputAST.getText().toString()) > 250) {
             score++;
         }
 
-        if (Integer.parseInt(input_ldh.getText().toString()) > 400) {
+        if (Integer.parseInt(inputLDH.getText().toString()) > 400) {
             score++;
         }
 
@@ -122,11 +122,16 @@ public class cadastro extends AppCompatActivity {
         scoreText.setText(score + "");
         scoreText.setVisibility(View.VISIBLE);
 
-        DAL dal = new DAL(cadastro.this);
-        Paciente p = new Paciente();
-        p.setNome(input_nome.getText().toString());
-        p.setIdade(Integer.parseInt(input_idade.getText().toString()));
-        p.setMortalidade(mortalidadeText.getText().toString());
-        dal.insert(p.getNome(), p.getIdade(), p.getMortalidade());
+        DAL dal = new DAL(Cadastro.this);
+        String nome = inputNome.getText().toString();
+        int idade = Integer.parseInt(inputIdade.getText().toString());
+        String mortalidade = mortalidadeText.getText().toString();
+        int leucocitos = Integer.parseInt(inputGlicemia.getText().toString());
+        int glicemia = Integer.parseInt(inputGlicemia.getText().toString());
+        int ast = Integer.parseInt(inputAST.getText().toString());
+        int ldh = Integer.parseInt(inputLDH.getText().toString());
+        int haslitiase = hasLitiase.isChecked() ? 1 : 0;
+
+        dal.insert(nome, idade, mortalidade, leucocitos, glicemia, ast, ldh, haslitiase);
     }
 }

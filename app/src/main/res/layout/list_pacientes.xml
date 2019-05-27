@@ -1,43 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="4">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/labelnome"
-        android:layout_width="60dp"
+        android:id="@+id/labelName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome:" />
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:text="Nome:"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/lvnome"
-        android:layout_width="100dp"
+        android:id="@+id/lvName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/labelName"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/labelidade"
-        android:layout_width="50dp"
+        android:id="@+id/labelAge"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Idade:" />
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="Idade:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelName" />
 
     <TextView
-        android:id="@+id/lvidade"
-        android:layout_width="40dp"
+        android:id="@+id/lvIdade"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="100" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/labelAge"
+        app:layout_constraintTop_toBottomOf="@+id/lvName" />
 
     <TextView
-        android:id="@+id/labelMortalidade"
-        android:layout_width="110dp"
+        android:id="@+id/labelMortality"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Motalidade (%):" />
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="8dp"
+        android:text="Mortalidade:"
+        app:layout_constraintStart_toEndOf="@+id/lvIdade"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/lvmortalidade"
-        android:layout_width="40dp"
+        android:id="@+id/lvMortalidade"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2%" />
-</LinearLayout>
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/labelMortality"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

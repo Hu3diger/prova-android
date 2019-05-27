@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cadastro">
+    tools:context=".Cadastro">
 
     <TextView
         android:id="@+id/textView"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/input_nome"
+        android:id="@+id/inputNome"
         android:layout_width="370dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -44,7 +44,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Nome"
-        app:layout_constraintBottom_toTopOf="@+id/input_nome"
+        app:layout_constraintBottom_toTopOf="@+id/inputNome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,10 +62,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_nome" />
+        app:layout_constraintTop_toBottomOf="@+id/inputNome" />
 
     <EditText
-        android:id="@+id/input_idade"
+        android:id="@+id/inputIdade"
         android:layout_width="370dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_nome"
+        app:layout_constraintTop_toBottomOf="@+id/inputNome"
         app:layout_constraintVertical_bias="0.073" />
 
     <CheckBox
@@ -89,7 +89,7 @@
         android:layout_marginTop="20dp"
         android:text="Litíase Biliar?"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_idade" />
+        app:layout_constraintTop_toBottomOf="@+id/inputIdade" />
 
     <TextView
         android:id="@+id/leucocitos"
@@ -109,7 +109,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:text="Glicemia"
-        app:layout_constraintBottom_toBottomOf="@+id/input_glicemia"
+        app:layout_constraintBottom_toBottomOf="@+id/inputGlicemia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/leucocitos"
         app:layout_constraintVertical_bias="0.277" />
@@ -122,7 +122,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:text="AST/TGO"
-        app:layout_constraintBottom_toBottomOf="@+id/input_ast"
+        app:layout_constraintBottom_toBottomOf="@+id/inputAST"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/glicemia"
         app:layout_constraintVertical_bias="0.211" />
@@ -135,7 +135,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:text="LDH"
-        app:layout_constraintBottom_toBottomOf="@+id/input_ldh"
+        app:layout_constraintBottom_toBottomOf="@+id/inputLDH"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ast"
         app:layout_constraintVertical_bias="0.138" />
@@ -151,7 +151,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/input_leucocito"
+        android:id="@+id/inputLeucocito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -162,11 +162,11 @@
         app:layout_constraintBottom_toBottomOf="@+id/leucocitos"
         app:layout_constraintEnd_toStartOf="@+id/textView10"
         app:layout_constraintStart_toEndOf="@+id/leucocitos"
-        app:layout_constraintTop_toBottomOf="@+id/input_idade"
+        app:layout_constraintTop_toBottomOf="@+id/inputIdade"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/input_glicemia"
+        android:id="@+id/inputGlicemia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -177,7 +177,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textView11"
         app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toEndOf="@+id/glicemia"
-        app:layout_constraintTop_toBottomOf="@+id/input_leucocito" />
+        app:layout_constraintTop_toBottomOf="@+id/inputLeucocito" />
 
     <TextView
         android:id="@+id/textView11"
@@ -190,7 +190,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
-        android:id="@+id/input_ast"
+        android:id="@+id/inputAST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -201,7 +201,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textView12"
         app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toEndOf="@+id/ast"
-        app:layout_constraintTop_toBottomOf="@+id/input_glicemia" />
+        app:layout_constraintTop_toBottomOf="@+id/inputGlicemia" />
 
     <TextView
         android:id="@+id/textView12"
@@ -214,7 +214,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/input_ldh"
+        android:id="@+id/inputLDH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -224,7 +224,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textView13"
         app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toEndOf="@+id/ldh"
-        app:layout_constraintTop_toBottomOf="@+id/input_ast" />
+        app:layout_constraintTop_toBottomOf="@+id/inputAST" />
 
     <TextView
         android:id="@+id/textView13"
@@ -246,7 +246,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_ldh" />
+        app:layout_constraintTop_toBottomOf="@+id/inputLDH" />
 
     <TextView
         android:id="@+id/labelPontuacao"

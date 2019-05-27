@@ -16,7 +16,7 @@ class DAL {
         database = new CreateDatabase(context);
     }
 
-    boolean insert(String nome, int idade, String mortalidade) {
+    boolean insert(String nome, int idade, String mortalidade, int leucocitos, int glicemia, int ast, int ldh, int hasLitiase) {
         ContentValues values;
         long result;
 
@@ -26,6 +26,12 @@ class DAL {
         values.put(CreateDatabase.NOME, nome);
         values.put(CreateDatabase.IDADE, idade);
         values.put(CreateDatabase.MORTALIDADE, mortalidade);
+        values.put(CreateDatabase.LEUCOCITOS, leucocitos);
+        values.put(CreateDatabase.GLICEMIA, glicemia);
+        values.put(CreateDatabase.AST, ast);
+        values.put(CreateDatabase.LDH, ldh);
+        values.put(CreateDatabase.HASLITIASE, hasLitiase);
+
 
         result = db.insert(CreateDatabase.TABLE, null, values);
         db.close();
@@ -76,7 +82,7 @@ class DAL {
         return cursor;
     }
 
-    boolean update(int id, String nome, int idade, String mortalidade) {
+    boolean update(int id, String nome, int idade, String mortalidade, String leucocitos, String glicemia, String ast, String ldh, Boolean hasLitiase) {
         ContentValues values;
         long result;
 
@@ -89,6 +95,11 @@ class DAL {
         values.put(CreateDatabase.NOME, nome);
         values.put(CreateDatabase.IDADE, idade);
         values.put(CreateDatabase.MORTALIDADE, mortalidade);
+        values.put(CreateDatabase.LEUCOCITOS, leucocitos);
+        values.put(CreateDatabase.GLICEMIA, glicemia);
+        values.put(CreateDatabase.AST, ast);
+        values.put(CreateDatabase.LDH, ldh);
+        values.put(CreateDatabase.HASLITIASE, hasLitiase);
 
         result = db.update(CreateDatabase.TABLE, values, where, args);
         db.close();
@@ -103,7 +114,8 @@ class DAL {
 
     Cursor loadAll() {
         Cursor cursor;
-        String[] fields = {CreateDatabase.ID, CreateDatabase.NOME, CreateDatabase.IDADE, CreateDatabase.MORTALIDADE};
+        String[] fields = {CreateDatabase.ID, CreateDatabase.NOME, CreateDatabase.IDADE, CreateDatabase.MORTALIDADE, CreateDatabase.LEUCOCITOS,
+        CreateDatabase.GLICEMIA, CreateDatabase.AST, CreateDatabase.LDH, CreateDatabase.HASLITIASE};
         db = database.getReadableDatabase();
 
         cursor = db.query(CreateDatabase.TABLE, fields, null,

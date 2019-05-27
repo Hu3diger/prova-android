@@ -12,6 +12,11 @@ public class CreateDatabase extends SQLiteOpenHelper {
     public static final String NOME = "nome";
     public static final String IDADE = "idade";
     public static final String MORTALIDADE = "mortalidade";
+    public static final String LEUCOCITOS = "leucocitos";
+    public static final String GLICEMIA = "glicemia";
+    public static final String AST = "ast";
+    public static final String LDH = "ldh";
+    public static final String HASLITIASE = "hasLitiase";
 
     private static final int VERSION = 1;
 
@@ -25,7 +30,12 @@ public class CreateDatabase extends SQLiteOpenHelper {
                 + "_id integer primary key autoincrement, " +
                 "nome text, " +
                 "idade numeric, " +
-                "mortalidade text" +
+                "mortalidade text," +
+                "leucocitos numeric," +
+                "glicemia numeric," +
+                "ast numeric," +
+                "ldh numeric," +
+                "hasLitiase numeric" +
                 ")";
 
         db.execSQL(sql);
